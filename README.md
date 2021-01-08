@@ -72,4 +72,21 @@ endforeach()
 /home/nong/redis-demo/3rd_party/cpp_redis/includes/cpp_redis/network/tcp_client_iface.hpp
 ```
 
+### 命令解释
+
+***file命令*** 操作文件命令，
+```
+file(GLOB <variable>
+        [LIST_DIRECTORIES true|false] [RELATIVE <path>] [CONFIGURE_DEPENDS]
+        [<globbing-expressions>...])
+file(GLOB_RECURSE <variable> [FOLLOW_SYMLINKS]
+        [LIST_DIRECTORIES true|false] [RELATIVE <path>] [CONFIGURE_DEPENDS]
+        [<globbing-expressions>...])
+```
+***例子1*** `file(GLOB s_${dir} "${dir}/*.cpp")`
+
+```
+Generate a list of files that match the <globbing-expressions> and store it into the <variable>. Globbing expressions are similar to regular expressions, but much simpler. If RELATIVE flag is specified, the results will be returned as relative paths to the given path. The results will be ordered lexicographically.
+GLOB是一种表达式，例子1中的GLOG将表达式中生成文件列表并存储到变量中
+```
 ***输出特定行数文本*** `sed -n 5,8p file`
