@@ -3,6 +3,23 @@
 
 ### 一个完整项目的构建
 - ***基本工程结构***
+```
+# Set the minimum version of CMake that can be used
+# To find the cmake version run
+# $ cmake --version
+cmake_minimum_required(VERSION 3.5)
+
+# Set the project name
+project (hello_cmake)
+
+# include headers file
+target_include_directories(${PROJECT}
+    ${PROJECT_SOURCE_DIR}/include}
+)
+
+# Add an executable
+add_executable(${PROJECT_NAME} main.cpp)
+```
 - ***静态库***
 - ***共享库***
 - ***引入第三方库***
@@ -30,11 +47,7 @@ set(SRC_DIRS "sources"
         "includes/cpp_redis/core"
         "includes/cpp_redis/misc"
         "includes/cpp_redis/network")
-```
-
-```
-foreach(dir ${SRC_DIRS})
-# get directory sources and headers
+``` ``` foreach(dir ${SRC_DIRS}) # get directory sources and headers
     file(GLOB s_${dir} "${dir}/*.cpp")
     file(GLOB h_${dir} "${dir}/*.hpp")
     file(GLOB i_${dir} "${dir}/*.ipp")
