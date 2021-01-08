@@ -69,3 +69,5 @@ endforeach()
 /home/nong/redis-demo/3rd_party/cpp_redis/includes/cpp_redis/network/tcp_client.hpp/
 /home/nong/redis-demo/3rd_party/cpp_redis/includes/cpp_redis/network/tcp_client_iface.hpp
 ```
+
+***输出特定行数文本*** `sed -n 5,8p file`
