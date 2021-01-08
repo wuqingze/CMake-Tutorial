@@ -9,6 +9,8 @@ add_library的作用是将指定的源文件生成链接文件，可以给外部
 
 ***平凡的写法***
 add_library(${PROJECT_NAME} src/main.cpp include/xx.h ...)
+
+***编程自动化的写法***
 ```
 set(SRC_DIRS "sources"
         "sources/builders"
