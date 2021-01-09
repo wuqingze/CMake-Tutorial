@@ -12,18 +12,27 @@ cmake_minimum_required(VERSION 3.5)
 # Set the project name
 project (hello_cmake)
 
-# include headers file
-target_include_directories(${PROJECT}
-    ${PROJECT_SOURCE_DIR}/include}
-)
-
 # Add an executable
 add_executable(${PROJECT_NAME} main.cpp)
+
+# include headers file
+include_directories(${PROJECT}
+    ${PROJECT_SOURCE_DIR}/include}
+)
 ```
 - ***静态库***
 - ***共享库***
 - ***引入第三方库***
     - ***本地代码***
+        - 一般项目结构
+        - 
+        ├── 3rd_party
+        │   └── cpp_redis
+        ├── CMakeLists.txt
+        ├── READEME.md
+        ├── src/*cpp
+        ├── include/*h
+
     - ***下载代码***
 - ***单元测试***
 ### add_library()
@@ -47,7 +56,7 @@ set(SRC_DIRS "sources"
         "includes/cpp_redis/core"
         "includes/cpp_redis/misc"
         "includes/cpp_redis/network")
-``` ``` foreach(dir ${SRC_DIRS}) # get directory sources and headers
+foreach(dir ${SRC_DIRS}) # get directory sources and headers
     file(GLOB s_${dir} "${dir}/*.cpp")
     file(GLOB h_${dir} "${dir}/*.hpp")
     file(GLOB i_${dir} "${dir}/*.ipp")
@@ -111,3 +120,4 @@ Generate a list of files that match the <globbing-expressions> and store it into
 GLOB是一种表达式，例子1中的GLOG将表达式中生成文件列表并存储到变量中
 ```
 ***输出特定行数文本*** `sed -n 5,8p file`
+
