@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/Basic-Project.dir/main.cc.o  -o Basic-Project 
