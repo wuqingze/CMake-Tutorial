@@ -33,7 +33,14 @@ include_directories(${PROJECT}
         ├── src/*cpp
         ├── include/*h
         ```
-
+        - 主项目添加子项目
+            - `add_subdirectory(3rd_party/cpp_redis)`
+            - 
+            ```
+            target_link_libraries(${PROJECT_NAME}
+                cpp_redis
+            )
+            ```
     - ***下载代码***
 - ***单元测试***
 ### add_library()
@@ -65,6 +72,8 @@ foreach(dir ${SRC_DIRS}) # get directory sources and headers
 # set sources
 set(SOURCES ${SOURCES} ${s_${dir}} ${h_${dir}} ${i_${dir}})
 endforeach()
+add_library(${PROJECT_NAME} ${SOURCES})
+
 ```
 这里的SOURCES变量是什么样子的呢，可以用`message(SOURCES)`打印出来
 ```
