@@ -41,6 +41,14 @@ include_directories(${PROJECT}
                 cpp_redis
             )
             ```
+        - 子项目向外提供target api接口
+            - add_library(${PROJECT} ${SOURCES})
+            - target_include_directories
+            ```
+            target_include_directories(${PROJECT}
+                PUBLIC
+                    ${PROJECT_SOURCE_DIR}/includes
+            ```
     - ***下载代码***
 - ***单元测试***
 ### add_library()
