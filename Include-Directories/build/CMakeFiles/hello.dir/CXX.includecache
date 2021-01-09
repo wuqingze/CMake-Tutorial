@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../includes/H1/Hello.h
+iostream
+-
+
+../includes/Hello.h
+iostream
+-
+
+/home/nong/CMake-Tutorial/Include-Directories/main.cc
+H1/Hello.h
+-
+Hello.h
+-
+math.cc
+/home/nong/CMake-Tutorial/Include-Directories/math.cc
+iostream
+-
+
+/home/nong/CMake-Tutorial/Include-Directories/math.cc
+
